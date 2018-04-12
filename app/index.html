@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sticky video</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    
+  </head>
+  <body>
+    <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active">
+            <a href="#" data-target="demo">Demo</a>
+          </li>
+          <li>
+            <a href="#" data-target="documentation">Documentation</a>
+          </li>
+          <li>
+            <a href="#" data-target="contact">Contact</a>
+          </li>
+        </ul>
+        <h1 class="text-muted">Sticky Video</h1>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Sticky Video</h1>
+        <p class="lead">A jQuery library for animating your embedded YouTube and Vimeo iFrames.</p>
+        <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
+      </div>
+
+      <div class="row" id="demo">
+        <div class="col-xs-12">
+          <h2>Demo</h2>        
+          <div>        
+            <p>To call for Youtube iFrame, use <code>$('.youtube-video').sticky_video();</code></p>
+            <iframe class="youtube-iframe" src="https://www.youtube.com/embed/9ZfN87gSjvI" frameborder="0" allowfullscreen=""></iframe>
+          </div>
+          <div>
+            <p>To call for Vimeo iFrame, use <code>$('.vimeo-video').sticky_video();</code></p>
+            <iframe class="vimeo-iframe" src="https://player.vimeo.com/video/76979871" frameborder="0" allowfullscreen=""></iframe>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="col-xs-12">
+            <h3>Selector</h3>
+            <div class="radio">
+              <label><input type="radio" name="video-select" value="youtube" checked>YouTube <code>$('.youtube-video').sticky_video();</code></label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="video-select" value="vimeo">Vimeo <code>$('.vimeo-video').sticky_video();</code></label>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <h3>Submit</h3>
+            <button class="btn btn-lg btn-success" id="submit">Submit!</button>
+            <button class="btn btn-lg btn-success" id="reload">Reset!</button>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <h3>JSON (options)</h3>
+            <p class="json"></p>
+          </div>
+          <div class="col-xs-12">
+            <h3>Options</h3>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-5">
+                <p><strong>Location</strong></p>
+                <div class="radio right">
+                  <label><input type="radio" name="right-left" value="right" checked> Right: <input type="text" name="" value="30px"></label>
+                </div>
+                <div class="radio left">
+                  <label><input type="radio" name="right-left" value="left">Left: <input type="text" name=""></label>
+                </div>
+                <div class="radio top">
+                  <label><input type="radio" name="top-bottom" value="top">Top: <input type="text" name=""></label>
+                </div>
+                <div class="radio bottom">
+                  <label><input type="radio" name="top-bottom" value="bottom" checked>Bottom: <input type="text" name="" value="30px"></label>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-5">
+                <p><strong>Size when sticky:</strong></p>
+                <label>Width: </label><input type="text" name="" class="sticky-width" value="400px">
+                <p>Height is calculated with 16:9 aspect ratio</p>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-2">
+                <div class="radio onscroll">
+                  <p><strong style="color: red;">Coming Soon!</strong></p>
+                  <p><strong>onScroll:</strong></p>                  
+                  <label class="radio"><input type="radio" name="onScroll" value="true" checked>true</label>
+                  <label class="radio"><input type="radio" name="onScroll" value="false">false</label>
+                </div>
+                <div class="radio onPlay">
+                  <p><strong>onPlay:</strong></p>
+                  <label class="radio"><input type="radio" name="onPlay" value="true" checked>true</label>
+                  <label class="radio"><input type="radio" name="onPlay" value="false">false</label>
+                </div>
+                <div class="radio onPause">
+                  <p><strong>onPause:</strong></p>
+                  <label class="radio"><input type="radio" name="onPause" value="true">true</label>
+                  <label class="radio"><input type="radio" name="onPause" value="false" checked>false</label>
+                </div>
+              </div>
+            </div>
+          </div>          
+        </div>
+      </div>
+
+      <div class="row" id="documentation">        
+        <div class="col-xs-12">
+          <h2>Documentation</h2>
+        </div>
+        <div class="col-xs-12">
+          <h3>Requirements</h3>
+          <p>Github link: </p>
+        </div>
+        <div class="col-xs-12">
+          <h3>Calling</h3>
+          <p>Syntax: </p>
+          <p><code>$('your-iframe').sticky_video(options);</code></p>
+          <p><strong>Please note: <code>('your-iframe')</code> must be an individual element. <code>.sticky_video(options);</code> can only be called to one element.</strong></p>
+        </div>
+        <div class="col-md-12">
+          <h3>Options (javascript object)</h3>
+        </div>
+        <div class="col-md-4">
+          <h4>Width</h4>
+          <p>Specify the dimension when video becomes fixed</p>
+          <p><code>width: 200px;</code></p>
+        </div>
+        <div class="col-md-4">
+          <h4>Location</h4>
+          <p>Specify location via pixel count and direction: (top, right, bottom, left)</p>
+          <p><code>right: 30px,</code></p>
+          <p><code>bottom: 30px,</code></p>
+          <p><strong>Please note that you cannot combine top with bottom or right and left at the same time.</strong></p>
+        </div>
+        <div class="col-md-4">
+          <h4>Animation on Scroll</h4>
+          <p>Specify if animation will take place on scroll</p>
+          <p><code>onScroll: true or false,</code></p>
+          <p><strong>Default: <code>default: true,</code></strong></p>
+        </div>
+        <div class="col-md-4">
+          <h4>Animation on play</h4>
+          <p>Specify whether animation will occur while video is playing</p>
+          <p><code>onPlay: true or false,</code></p>
+          <p><strong>Default: <code>default: true,</code></strong></p>          
+        </div>
+        <div class="col-md-4">
+          <h4>Animation on pause</h4>
+          <p>Specify whether animation will occur while video is paused</p>
+          <p><code>onPause: true or false,</code></p>
+          <p><strong>Default: <code>default: false,</code></strong></p>          
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Lorem Ipsum</h4>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+          <h4>Lorem Ipsum</h4>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+          <h4>Lorem Ipsum</h4>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+      </div>
+
+      <div class="footer" id="contact">
+        <p>♥ from <a href="https://github.com/aljmiller87">aljmiller87</a></p>
+      </div>
+    </div>
+    
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/plugins.js -->
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/main.js -->    
+    <script src="scripts/scrollfire.min.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="scripts/sticky_video.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
