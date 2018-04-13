@@ -18,7 +18,7 @@ $(document).ready(function(){
 		iFrame.stickyVideo(options);
 	})
 
-	$('.header a').click(function(e) {
+	$('.header a[data-target*="d"').click(function(e) {
 		e.preventDefault();
 		$('.header a').parent('li').removeClass('active');
 		$(this).parent('li').addClass('active');

@@ -28,13 +28,13 @@
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li class="active">
-            <a href="#" data-target="demo">Demo</a>
+            <a href="" data-target="demo">Demo</a>
           </li>
           <li>
-            <a href="#" data-target="documentation">Documentation</a>
+            <a href="" data-target="documentation">Documentation</a>
           </li>
           <li>
-            <a href="#" data-target="contact">Contact</a>
+            <a href="https://github.com/aljmiller87/sticky_video">Github</a>
           </li>
         </ul>
         <h1 class="text-muted">Sticky Video</h1>
@@ -129,42 +129,59 @@
         </div>
         <div class="col-xs-12">
           <h3>Requirements</h3>
-          <p>Github link: </p>
+          <ol>
+            <li>jQuery: <code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;</code></li>
+            <li>ScrollFire.js: <a href="https://github.com/Xaxis/jquery.scrollfire">jquery.scrollfire.js or jquery.scrollfire.min.js</a></li>
+            <li>Vimeo player: <br>
+              <span>npm: </span><code>npm install @vimeo/player</code><br>
+              <span>bower: </span><code>bower install vimeo-player-js</code><br>
+              <span>CDN: </span><code>&lt;script src="https://player.vimeo.com/api/player.js"&gt;&lt;/script&gt;</code>
+            </li>
+            <li>sticky video scss or css</li>
+            <li>sticky video js</li>
+
+          </ol>
         </div>
         <div class="col-xs-12">
           <h3>Calling</h3>
           <p>Syntax: </p>
           <p><code>$('your-iframe').sticky_video(options);</code></p>
-          <p><strong>Please note: <code>('your-iframe')</code> must be an individual element. <code>.sticky_video(options);</code> can only be called to one element.</strong></p>
+          <p><strong>Please note: <code>('your-iframe')</code> must be an individual element. <code>.sticky_video(options);</code> can only call one element per html page.</strong></p>
         </div>
-        <div class="col-md-12">
+        <div class="col-sm-12">
           <h3>Options (javascript object)</h3>
         </div>
-        <div class="col-md-4">
+      </div>
+      <div class="row">
+        <div class="col-sm-6 option">
           <h4>Width</h4>
           <p>Specify the dimension when video becomes fixed</p>
           <p><code>width: 200px;</code></p>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-6 option">
           <h4>Location</h4>
           <p>Specify location via pixel count and direction: (top, right, bottom, left)</p>
           <p><code>right: 30px,</code></p>
           <p><code>bottom: 30px,</code></p>
           <p><strong>Please note that you cannot combine top with bottom or right and left at the same time.</strong></p>
         </div>
-        <div class="col-md-4">
+      </div>
+      <div class="row">
+        <div class="col-sm-6 option">
           <h4>Animation on Scroll</h4>
           <p>Specify if animation will take place on scroll</p>
           <p><code>onScroll: true or false,</code></p>
           <p><strong>Default: <code>default: true,</code></strong></p>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-6 option">
           <h4>Animation on play</h4>
           <p>Specify whether animation will occur while video is playing</p>
           <p><code>onPlay: true or false,</code></p>
           <p><strong>Default: <code>default: true,</code></strong></p>          
         </div>
-        <div class="col-md-4">
+      </div>
+      <div class="row">
+        <div class="col-sm-6 option">
           <h4>Animation on pause</h4>
           <p>Specify whether animation will occur while video is paused</p>
           <p><code>onPause: true or false,</code></p>
